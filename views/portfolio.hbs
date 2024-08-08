@@ -1,0 +1,40 @@
+<form class="adrees_container">
+  <h2>Enter token address:</h2>
+  <input name="tokenAdress" type="text" placeholder="Enter token address" />
+  <button type="submit">Submit</button>
+</form>
+
+<div class="alert_box">
+
+</div>
+
+<div class="container_main_info table_container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Date adding</th>
+        <th scope="col">Purchase price in usd</th>
+        <th class="name-table" scope="col">Currency usd price <img src="./images/gecko.png"> </th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#if portfolio}}
+        {{#each portfolio}}
+          <tr id="{{id}}">
+            <td class="name-table">{{name}} <img src="{{img}}"></td>
+            <td>{{date}}</td>
+            <td>{{price_usd_start}} $ &nbsp;&nbsp;|&nbsp;&nbsp; <a data-atribute="edit" href="#">Edit</a></td>
+            <td class="name-table price-table"><a target="_blank" href="https://www.geckoterminal.com/ru/ton/pools/{{address}}">{{price_usd_current}} $ </a></td>
+            <td><a data-atribute="delete" href="#">Delete</a></td>
+          </tr>
+        {{/each}}
+      {{else}}
+        <tr>
+          <td colspan="5">No data</td>
+        </tr>
+      {{/if}}
+    </tbody>
+  </table>
+</div>

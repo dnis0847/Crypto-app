@@ -1,0 +1,48 @@
+<div class="hero_block">
+{{#if login}}
+  {{#if admin}}
+    <nav>
+    <div class="nav_container">
+      <div class="aut_container">
+        <h2>{{login}}</h2> 
+        <span>|</span>
+        <img class="exit" src="./images/exit-icon.svg" alt="logout" />
+      </div>
+    </div>
+    <img class="logo" src="./images/currency.png" alt="" />
+    <div class="nav_container menu_item">
+      <a href="/">Main page</a>
+      <span>|</span>
+      <a href="/admin">Admin panel</a>
+    </div>
+  </nav>
+  {{else}}
+    <nav>
+    <div class="nav_container">
+      <div class="aut_container">
+        <h2>{{login}}</h2> 
+        <span>|</span>
+        <img class="exit" src="./images/exit-icon.svg" alt="logout" />
+      </div>
+    </div>
+    <img class="logo" src="./images/currency.png" alt="" />
+    <div class="nav_container menu_item">
+      <a href="/">Main page</a>
+    </div>
+  </nav>
+  {{/if}}
+{{else}}
+  <nav>
+    <div class="nav_container">
+      <div class="aut_container">
+        <a href="/register"> <img src="./images/register-account.svg" alt=""> Register account</a>
+        <span>|</span>
+        <a href="/login"> <img src="./images/login.svg" alt=""> Login</a>
+      </div>
+    </div>
+    <img class="logo" src="./images/currency.png" alt="" />
+    <div class="nav_container menu_item">
+      <a href="/">Main page</a>
+    </div>
+  </nav>
+{{/if}}

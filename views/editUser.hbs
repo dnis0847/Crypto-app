@@ -1,0 +1,23 @@
+<div class="container_main_info">
+    <div class="createNewUser_block">
+        <h3 class="login_table">Edit User {{loginUser}}</h3>
+        <form id="createNewUser_form">
+            {{#each users}}
+                <input type="text" name="login" placeholder="Login" value="{{login}}"/>
+                <input type="email" name="email" placeholder="Email" value="{{email}}"/>
+                <input type="text" name="phone" placeholder="Phone" value="{{phone}}"/>
+                <input type="text" name="chat_id" placeholder="Telegram chat id" value="{{chat_id}}"/>
+                <input type="password" name="password" placeholder="new password" value="{{password}}" />
+                <div class="form-check">
+                    <label class="form-check-label" for="admin">Admin</label>
+                    {{#if admin}}
+                        <input type="checkbox" name="admin" checked/>
+                    {{else}}
+                        <input type="checkbox" name="admin"/>
+                    {{/if}}
+                </div>
+                <button type="submit">Edit</button>
+            {{/each}}
+        </form>
+    </div>
+</div>

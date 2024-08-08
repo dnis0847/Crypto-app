@@ -1,0 +1,48 @@
+<div class="container_main_info">
+    <h3 class="login_table">Table Users</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Login</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">TG chat id</th>
+                <th scope="col">Admin</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each users}}
+            <tr>
+                <td>{{login}}</td>
+                <td>{{email}}</td>
+                <td>{{phone}}</td>
+                <td>{{chat_id}}</td>
+                {{#if admin}}
+                    <td>Yes</td>
+                {{else}}
+                    <td>No</td>
+                {{/if}}
+                <td><a href="/editUser/{{login}}">Edit</a></td>
+                <td><a href="#" class="deleteUser" data-login="{{login}}">Delete</a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <div class="createNewUser_block">
+        <h3 class="login_table">Create New User</h3>
+        <form id="createNewUser_form">
+                <input type="text" name="login" placeholder="Login" />
+                <input type="email" name="email" placeholder="Email" />
+                <input type="text" name="phone" placeholder="Phone" />
+                <input type="text" name="chat_id" placeholder="Telegram chat id" />
+                <input type="password" name="password" placeholder="Password" />
+                <div class="form-check">
+                    <label class="form-check-label" for="admin">Admin</label>
+                    <input type="checkbox" name="admin" />
+                </div>
+            <button type="submit">Create</button>
+        </form>
+    </div>
+</div>
