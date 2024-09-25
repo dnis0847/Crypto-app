@@ -2,8 +2,8 @@
 
  const connection = mysql.createConnection({
      port: "3306",
-     user: "gen_user",
-     host: "null",
-     database: "default_db",
+     user: "dnis0847",
+     host: "194.87.84.212",
+     database: "CryptoAPP",
      password: "5411yaya"
 });
